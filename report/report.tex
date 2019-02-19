@@ -1,0 +1,125 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% University Assignment Title Page 
+% LaTeX Template
+% Version 1.0 (27/12/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% WikiBooks (http://en.wikibooks.org/wiki/LaTeX/Title_Creation)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\title{Title page with logo}
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{natbib}
+\usepackage{amsmath}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{listings}
+\usepackage{color}
+\usepackage[explicit]{titlesec}
+\usepackage{url}
+\usepackage{subfig}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{mwe}
+
+\titleformat{\section}{\normalfont\Large\bfseries}{Experiment \thesection}{1em}{}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\begin{document}
+
+\begin{titlepage}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+
+\center % Center everything on the page
+ 
+%----------------------------------------------------------------------------------------
+%	HEADING SECTIONS
+%----------------------------------------------------------------------------------------
+
+\textsc{\LARGE University of St Andrews}\\[1.5cm] % Name of your university/college
+\textsc{\Large CS4103 Coursework 1}\\[0.5cm] % Major heading such as course name
+\textsc{\large }\\[0.5cm] % Minor heading such as course title
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\HRule \\[0.4cm]
+{ \huge \bfseries Middleware}\\[0.4cm] % Title of your document
+\HRule \\[1.5cm]
+ 
+%----------------------------------------------------------------------------------------
+%	AUTHOR SECTION
+%----------------------------------------------------------------------------------------
+
+
+\Large \emph{Author:}\\
+ \textsc{150008022}\\[3cm] % Your name
+
+%----------------------------------------------------------------------------------------
+%	DATE SECTION
+%----------------------------------------------------------------------------------------
+
+{\large \today}\\[2cm] % Date, change the \today to a set date if you want to be precise
+
+%----------------------------------------------------------------------------------------
+%	LOGO SECTION
+%---------------------------------------------------------------------------------------
+
+\includegraphics[width = 3.1cm]{images/standrewslogo.png}
+ 
+%----------------------------------------------------------------------------------------
+
+\vfill % Fill the rest of the page with whitespace
+
+\end{titlepage}
+
+\part*{Goal}
+
+The goal of this practical was to implement a distributed application using communication middleware to collect data on user responses to the n-person prisoner's dilemma.
+
+\part{Communication Set-Up}
+
+The application was set up using Spring Initializr \cite{springinit}, which provided a Spring Boot application template, with the web and test starter dependencies. A controller class to provide REST request mappings was implemented, and the test connection method was created in the ProsecutorService class. Unit tests were written for both, and Postman was used to test the request when the application server was running, and to fulfill the criteria for part one.
+
+\part{Single Client Game}
+
+To provide a more user-friendly client, create-react-app \cite{createreactapp} was used to boostrap a react.js application. By using a proxy setting, CORS issues were avoided while developing locally. A simple test button was supplied that would perform an asynchronous call to the API test endpoint, and then print the response to the screen (Figures \ref{fig:beforepress} and \ref{fig:afterpress}).
+
+\begin{figure}[!ht]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.9\textwidth]{images/part1pretest} % first figure itself
+        \caption{Before Press}
+        \label{fig:beforepress}
+    \end{minipage}\hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.9\textwidth]{images/part1posttest} % second figure itself
+        \caption{After Press}
+        \label{fig:afterpress}
+    \end{minipage}
+\end{figure}
+
+\part*{Conclusion}
+
+\bibliographystyle{unsrt}
+\bibliography{mybib}
+
+\end{document}
