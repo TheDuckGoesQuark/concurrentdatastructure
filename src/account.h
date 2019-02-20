@@ -1,9 +1,11 @@
-struct CAccount* createAccount(int initialValue);
+typedef struct CAccount CAccount;
 
-int getBalance(struct CAccount* account);
+extern CAccount* createAccount(int initialValue);
 
-void deposit(struct CAccount* account, int amount);
+extern int getBalance(CAccount* account);
 
-int withdraw(struct CAccount* account, int amount);
+extern void deposit(CAccount* account, int amount);
 
-void destroyAccount(struct CAccount* account);
+extern int withdraw(CAccount* account, int amount);
+
+extern void destroyAccount(CAccount* account);

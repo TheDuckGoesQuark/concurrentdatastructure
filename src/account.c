@@ -1,28 +1,37 @@
 #include <stdlib.h>
+#include <pthread.h>
+#include "account.h"
 
-struct CAccount {
+typedef struct CAccount {
     int balance;
-};
+    pthread_mutex_t lock;
+} CAccount;
 
-struct CAccount* createAccount(int initialValue) {
-    struct CAccount* account = (struct CAccount*) malloc(sizeof(struct CAccount));
+CAccount* createAccount(int initialValue) {
+    CAccount* account = (CAccount*) malloc(sizeof(CAccount));
     account->balance = initialValue;
+    pthread_mutex_init(& (account->lock), NULL);
     return account;
 }
 
-int getBalance(struct CAccount* account) {
+int getBalance(CAccount* account) {
     return account->balance;
 }
 
-void deposit(struct CAccount* account, int amount) {
+void deposit(CAccount* account, int amount) {
+    pthread_mutex_lock(& (account->lock));
     account->balance += amount;
+    pthread_mutex_unlock(& (account->lock));
 }
 
-int withdraw(struct CAccount* account, int amount) {
+int withdraw(CAccount* account, int amount) {
+    pthread_mutex_lock(& (account->lock));
     account->balance -= amount;
+    pthread_mutex_unlock(& (account->lock));
     return amount;
 }
 
-void destroyAccount(struct CAccount* account) {
+void destroyAccount(CAccount* account) {
+    pthread_mutex_destroy(& (account->lock));
     free(account);
 }
