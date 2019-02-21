@@ -93,11 +93,18 @@
 
 The goal of this practical was to implement and compare a locking and lock free version of a concurrent account data structure.
 
-\part{Testing Environment}
+\part{Language and Structure}
 
 To allow for thorough analysis, the C language was chosen for this practical. This would allow both data structure implementations to use fairly low level operations whilst maintaining a reasonable level of readability and ease of development. Since the gcc compiler can also provide the resulting assembly code, this could also be analysed when comparing lock free and locking implementations. Comparing the effects of compiler optimisation on the locking code could also be considered. 
 
+The interface for the account is provided in \emph{account.h}. Since C doesn't support classes, the methods described in the practical specification were altered to also take an account pointer as an argument. A create and destroy method were also provided to allocate and free any memory used by the account struct.
+
 \part{Locking}
+
+The locking account struct involved two fields, the account balance and the account lock. This lock would have to be obtained in order for a method to make changes to the balance. The account creation method would initialise the mutex with the default attributes (PTHREAD_PRIO_INHERIT and PTHREAD_RECURSVIE_DISABLE). 
+
+
+
 
 \part{Single Client Game}
 

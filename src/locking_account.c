@@ -15,7 +15,11 @@ CAccount* createAccount(int initialValue) {
 }
 
 int getBalance(CAccount* account) {
-    return account->balance;
+    int val;
+    pthread_mutex_lock(& (account->lock));
+    val = account->balance;
+    pthread_mutex_unlock(& (account->lock));
+    return val;
 }
 
 void deposit(CAccount* account, int amount) {
