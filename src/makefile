@@ -9,5 +9,5 @@ locking: account.h main.c locking_account.c
 .PHONY: clean
 clean:
 	rm -f $(obj) *.o lockfree locking
-	
+
 # http://nuclear.mutantstargoat.com/articles/make/#simpler-makefile
