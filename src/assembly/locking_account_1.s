@@ -1,6 +1,5 @@
-	.file	"account.c"
+	.file	"locking_account.c"
 	.text
-	.p2align 4,,15
 	.globl	createAccount
 	.type	createAccount, @function
 createAccount:
@@ -12,19 +11,19 @@ createAccount:
 	pushq	%rbx
 	.cfi_def_cfa_offset 24
 	.cfi_offset 3, -24
-	movl	%edi, %ebp
-	movl	$48, %edi
 	subq	$8, %rsp
 	.cfi_def_cfa_offset 32
+	movl	%edi, %ebp
+	movl	$48, %edi
 	call	malloc@PLT
-	leaq	8(%rax), %rdi
-	movl	%ebp, (%rax)
-	xorl	%esi, %esi
 	movq	%rax, %rbx
+	movl	%ebp, (%rax)
+	leaq	8(%rax), %rdi
+	movl	$0, %esi
 	call	pthread_mutex_init@PLT
+	movq	%rbx, %rax
 	addq	$8, %rsp
 	.cfi_def_cfa_offset 24
-	movq	%rbx, %rax
 	popq	%rbx
 	.cfi_def_cfa_offset 16
 	popq	%rbp
@@ -33,18 +32,37 @@ createAccount:
 	.cfi_endproc
 .LFE19:
 	.size	createAccount, .-createAccount
-	.p2align 4,,15
 	.globl	getBalance
 	.type	getBalance, @function
 getBalance:
 .LFB20:
 	.cfi_startproc
-	movl	(%rdi), %eax
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	pushq	%rbx
+	.cfi_def_cfa_offset 24
+	.cfi_offset 3, -24
+	subq	$8, %rsp
+	.cfi_def_cfa_offset 32
+	movq	%rdi, %rbp
+	leaq	8(%rdi), %rbx
+	movq	%rbx, %rdi
+	call	pthread_mutex_lock@PLT
+	movl	0(%rbp), %ebp
+	movq	%rbx, %rdi
+	call	pthread_mutex_unlock@PLT
+	movl	%ebp, %eax
+	addq	$8, %rsp
+	.cfi_def_cfa_offset 24
+	popq	%rbx
+	.cfi_def_cfa_offset 16
+	popq	%rbp
+	.cfi_def_cfa_offset 8
 	ret
 	.cfi_endproc
 .LFE20:
 	.size	getBalance, .-getBalance
-	.p2align 4,,15
 	.globl	deposit
 	.type	deposit, @function
 deposit:
@@ -56,27 +74,27 @@ deposit:
 	pushq	%rbp
 	.cfi_def_cfa_offset 24
 	.cfi_offset 6, -24
-	leaq	8(%rdi), %rbp
 	pushq	%rbx
 	.cfi_def_cfa_offset 32
 	.cfi_offset 3, -32
 	movq	%rdi, %rbx
 	movl	%esi, %r12d
+	leaq	8(%rdi), %rbp
 	movq	%rbp, %rdi
 	call	pthread_mutex_lock@PLT
 	addl	%r12d, (%rbx)
 	movq	%rbp, %rdi
+	call	pthread_mutex_unlock@PLT
 	popq	%rbx
 	.cfi_def_cfa_offset 24
 	popq	%rbp
 	.cfi_def_cfa_offset 16
 	popq	%r12
 	.cfi_def_cfa_offset 8
-	jmp	pthread_mutex_unlock@PLT
+	ret
 	.cfi_endproc
 .LFE21:
 	.size	deposit, .-deposit
-	.p2align 4,,15
 	.globl	withdraw
 	.type	withdraw, @function
 withdraw:
@@ -85,7 +103,6 @@ withdraw:
 	pushq	%r12
 	.cfi_def_cfa_offset 16
 	.cfi_offset 12, -16
-	leaq	8(%rdi), %r12
 	pushq	%rbp
 	.cfi_def_cfa_offset 24
 	.cfi_offset 6, -24
@@ -94,6 +111,7 @@ withdraw:
 	.cfi_offset 3, -32
 	movq	%rdi, %rbx
 	movl	%esi, %ebp
+	leaq	8(%rdi), %r12
 	movq	%r12, %rdi
 	call	pthread_mutex_lock@PLT
 	subl	%ebp, (%rbx)
@@ -110,7 +128,6 @@ withdraw:
 	.cfi_endproc
 .LFE22:
 	.size	withdraw, .-withdraw
-	.p2align 4,,15
 	.globl	destroyAccount
 	.type	destroyAccount, @function
 destroyAccount:
@@ -123,9 +140,10 @@ destroyAccount:
 	leaq	8(%rdi), %rdi
 	call	pthread_mutex_destroy@PLT
 	movq	%rbx, %rdi
+	call	free@PLT
 	popq	%rbx
 	.cfi_def_cfa_offset 8
-	jmp	free@PLT
+	ret
 	.cfi_endproc
 .LFE23:
 	.size	destroyAccount, .-destroyAccount

@@ -1,16 +1,13 @@
-src = $(wildcard *.c)
-obj = $(src:.c=.o)
-
 LDFLAGS = -lGL -lm -lpthread -O3
 
-myprog: $(obj)
+lockfree: account.h main.c lockfree_account.c
 	$(CC) -o $@ $^ $(LDFLAGS)
 
-run: myprog
-	./myprog
+locking: account.h main.c locking_account.c
+	$(CC) -o $@ $^ $(LDFLAGS)
 
 .PHONY: clean
 clean:
-	rm -f $(obj) myprog
+	rm -f $(obj) *.o lockfree locking
 
 # http://nuclear.mutantstargoat.com/articles/make/#simpler-makefile
