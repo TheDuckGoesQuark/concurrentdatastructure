@@ -52,7 +52,7 @@
 %----------------------------------------------------------------------------------------
 
 \textsc{\LARGE University of St Andrews}\\[1.5cm] % Name of your university/college
-\textsc{\Large CS4103 Coursework 1}\\[0.5cm] % Major heading such as course name
+\textsc{\Large CS4204 Coursework 1}\\[0.5cm] % Major heading such as course name
 \textsc{\large }\\[0.5cm] % Minor heading such as course title
 
 %----------------------------------------------------------------------------------------
@@ -60,7 +60,7 @@
 %----------------------------------------------------------------------------------------
 
 \HRule \\[0.4cm]
-{ \huge \bfseries Middleware}\\[0.4cm] % Title of your document
+{ \huge \bfseries Concurrent Data Structure}\\[0.4cm] % Title of your document
 \HRule \\[1.5cm]
  
 %----------------------------------------------------------------------------------------
@@ -91,15 +91,15 @@
 
 \part*{Goal}
 
-The goal of this practical was to implement a distributed application using communication middleware to collect data on user responses to the n-person prisoner's dilemma.
+The goal of this practical was to implement and compare a locking and lock free version of a concurrent account data structure.
 
-\part{Communication Set-Up}
+\part{Testing Environment}
 
-The application was set up using Spring Initializr \cite{springinit}, which provided a Spring Boot application template, with the web and test starter dependencies. A controller class to provide REST request mappings was implemented, and the test connection method was created in the ProsecutorService class. Unit tests were written for both, and Postman was used to test the request when the application server was running, and to fulfill the criteria for part one.
+To allow for thorough analysis, the C language was chosen for this practical. This would allow both data structure implementations to use fairly low level operations whilst maintaining a reasonable level of readability and ease of development. Since the gcc compiler can also provide the resulting assembly code, this could also be analysed when comparing lock free and locking implementations. Comparing the effects of compiler optimisation on the locking code could also be considered. 
+
+\part{Locking}
 
 \part{Single Client Game}
-
-To provide a more user-friendly client, create-react-app \cite{createreactapp} was used to boostrap a react.js application. By using a proxy setting, CORS issues were avoided while developing locally. A simple test button was supplied that would perform an asynchronous call to the API test endpoint, and then print the response to the screen (Figures \ref{fig:beforepress} and \ref{fig:afterpress}).
 
 \begin{figure}[!ht]
     \centering
