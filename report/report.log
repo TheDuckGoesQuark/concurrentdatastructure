@@ -1,50 +1,51 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.1.29)  17 FEB 2019 19:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.11.3)  21 FEB 2019 16:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **report.tex
 (./report.tex
-LaTeX2e <2018-04-01> patch level 5
+LaTeX2e <2017-04-15>
+Babel <3.18> and hyphenation patterns for 5 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
-\c@part=\count80
-\c@section=\count81
-\c@subsection=\count82
-\c@subsubsection=\count83
-\c@paragraph=\count84
-\c@subparagraph=\count85
-\c@figure=\count86
-\c@table=\count87
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2018/06/05 3.22 The Babel package
+Package: babel 2018/02/14 3.18 The Babel package
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/switch.def
-File: switch.def 2018/06/05 3.22 Babel switching mechanism
+File: switch.def 2018/02/14 3.18 Babel switching mechanism
 )
 (/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
 Language: english 2017/06/06 v3.3r English support from the babel system
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2018/06/05 3.22 Babel common definitions
-\babel@savecnt=\count88
+File: babel.def 2018/02/14 3.18 Babel common definitions
+\babel@savecnt=\count87
 \U@D=\dimen103
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
-\bbl@dirlevel=\count89
+\bbl@dirlevel=\count88
 )
 \l@canadian = a dialect from \language\l@american 
 \l@australian = a dialect from \language\l@british 
 \l@newzealand = a dialect from \language\l@british 
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2018/04/06 v1.3b Input encoding file
+Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
 
@@ -57,7 +58,7 @@ Package: ucs 2013/05/11 v2.2 UCS: Unicode input support
 (/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-global.def
 File: uni-global.def 2013/05/13 UCS: Unicode global data
 )
-\uc@secondtry=\count90
+\uc@secondtry=\count89
 \uc@combtoks=\toks16
 \uc@combtoksb=\toks17
 \uc@temptokena=\toks18
@@ -67,7 +68,7 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip43
 \bibsep=\skip44
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count91
+\c@NAT@ctr=\count90
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2017/09/02 v2.17a AMS math features
@@ -89,13 +90,13 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count92
+\inf@bad=\count91
 LaTeX Info: Redefining \frac on input line 213.
-\uproot@=\count93
-\leftroot@=\count94
+\uproot@=\count92
+\leftroot@=\count93
 LaTeX Info: Redefining \overline on input line 375.
-\classnum@=\count95
-\DOTSCASE@=\count96
+\classnum@=\count94
+\DOTSCASE@=\count95
 LaTeX Info: Redefining \ldots on input line 472.
 LaTeX Info: Redefining \dots on input line 475.
 LaTeX Info: Redefining \cdots on input line 596.
@@ -104,15 +105,15 @@ LaTeX Info: Redefining \cdots on input line 596.
 \big@size=\dimen106
 LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
-\macc@depth=\count97
-\c@MaxMatrixCols=\count98
+\macc@depth=\count96
+\c@MaxMatrixCols=\count97
 \dotsspace@=\muskip10
-\c@parentequation=\count99
-\dspbrk@lvl=\count100
+\c@parentequation=\count98
+\dspbrk@lvl=\count99
 \tag@help=\toks20
-\row@=\count101
-\column@=\count102
-\maxfields@=\count103
+\row@=\count100
+\column@=\count101
+\maxfields@=\count102
 \andhelp@=\toks21
 \eqnshift@=\dimen107
 \alignsep@=\dimen108
@@ -143,7 +144,7 @@ Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 \XKV@tempa@toks=\toks25
 
 (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/keyval.tex))
-\XKV@depth=\count104
+\XKV@depth=\count103
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
@@ -226,10 +227,10 @@ ex
 \pgf@yc=\dimen124
 \w@pgf@writea=\write3
 \r@pgf@reada=\read1
-\c@pgf@counta=\count105
-\c@pgf@countb=\count106
-\c@pgf@countc=\count107
-\c@pgf@countd=\count108
+\c@pgf@counta=\count104
+\c@pgf@countb=\count105
+\c@pgf@countc=\count106
+\c@pgf@countd=\count107
 \t@pgf@toka=\toks30
 \t@pgf@tokb=\toks31
 \t@pgf@tokc=\toks32
@@ -248,8 +249,8 @@ File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
 tex
 File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
-\pgfsyssoftpath@smallbuffer@items=\count109
-\pgfsyssoftpath@bigbuffer@items=\count110
+\pgfsyssoftpath@smallbuffer@items=\count108
+\pgfsyssoftpath@bigbuffer@items=\count109
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
 tex
@@ -263,7 +264,7 @@ Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen125
-\pgfmath@count=\count111
+\pgfmath@count=\count110
 \pgfmath@box=\box29
 \pgfmath@toks=\toks33
 \pgfmath@stack@operand=\toks34
@@ -287,7 +288,7 @@ tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
 thmetics.code.tex)))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count112
+\c@pgfmathroundto@lastzeros=\count111
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
 x
@@ -325,7 +326,7 @@ File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
 \pgfpic=\box30
 \pgf@hbox=\box31
 \pgf@layerbox@main=\box32
-\pgf@picture@serial@count=\count113
+\pgf@picture@serial@count=\count112
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
 ode.tex
@@ -358,7 +359,7 @@ File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
 \pgf@max=\dimen149
-\pgf@sys@shading@range@num=\count114
+\pgf@sys@shading@range@num=\count113
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
@@ -415,7 +416,7 @@ Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
 .code.tex
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
-\pgf@plot@mark@count=\count115
+\pgf@plot@mark@count=\count114
 \pgfplotmarksize=\dimen154
 )
 \tikz@lastx=\dimen155
@@ -428,18 +429,18 @@ File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
 \tikz@figbox@bg=\box36
 \tikz@tempbox=\box37
 \tikz@tempbox@bg=\box38
-\tikztreelevel=\count116
-\tikznumberofchildren=\count117
-\tikznumberofcurrentchild=\count118
-\tikz@fig@count=\count119
+\tikztreelevel=\count115
+\tikznumberofchildren=\count116
+\tikznumberofcurrentchild=\count117
+\tikz@fig@count=\count118
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
-\pgfmatrixcurrentrow=\count120
-\pgfmatrixcurrentcolumn=\count121
-\pgf@matrix@numberofcolumns=\count122
+\pgfmatrixcurrentrow=\count119
+\pgfmatrixcurrentcolumn=\count120
+\pgf@matrix@numberofcolumns=\count121
 )
-\tikz@expandcount=\count123
+\tikz@expandcount=\count122
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarytopaths.code.tex
@@ -450,38 +451,38 @@ zlibrarypositioning.code.tex
 File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.1a (rcs-revision 1.7)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
-Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count124
-\calc@Bcount=\count125
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count123
+\calc@Bcount=\count124
 \calc@Adimen=\dimen161
 \calc@Bdimen=\dimen162
 \calc@Askip=\skip48
 \calc@Bskip=\skip49
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count126
+\calc@Ccount=\count125
 \calc@Cskip=\skip50
 )
-\c@@todonotes@numberoftodonotes=\count127
+\c@@todonotes@numberoftodonotes=\count126
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count128
+\lst@mode=\count127
 \lst@gtempboxa=\box39
 \lst@token=\toks38
-\lst@length=\count129
+\lst@length=\count128
 \lst@currlwidth=\dimen163
-\lst@column=\count130
-\lst@pos=\count131
+\lst@column=\count129
+\lst@pos=\count130
 \lst@lostspace=\dimen164
 \lst@width=\dimen165
-\lst@newlines=\count132
-\lst@lineno=\count133
+\lst@newlines=\count131
+\lst@lineno=\count132
 \lst@maxwidth=\dimen166
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count134
-\lst@skipnumbers=\count135
+\c@lstnumber=\count133
+\lst@skipnumbers=\count134
 \lst@framebox=\box40
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
@@ -509,11 +510,11 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 Package: subfig 2005/06/28 ver: 1.3 subfig package
 
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
-Package: caption 2018/05/01 v3.3-147 Customizing captions (AR)
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2018/05/27 v1.8a caption3 kernel (AR)
-Package caption3 Info: TeX engine: e-TeX on input line 64.
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
 \captionmargin=\dimen172
 \captionmargin@=\dimen173
 \captionwidth=\dimen174
@@ -522,20 +523,20 @@ Package caption3 Info: TeX engine: e-TeX on input line 64.
 \caption@parindent=\dimen177
 \caption@hangindent=\dimen178
 )
-\c@ContinuedFloat=\count136
+\c@ContinuedFloat=\count135
 Package caption Info: listings package is loaded.
 )
-\c@KVtest=\count137
+\c@KVtest=\count136
 \sf@farskip=\skip53
 \sf@captopadj=\dimen179
 \sf@capskip=\skip54
 \sf@nearskip=\skip55
-\c@subfigure=\count138
-\c@subfigure@save=\count139
-\c@lofdepth=\count140
-\c@subtable=\count141
-\c@subtable@save=\count142
-\c@lotdepth=\count143
+\c@subfigure=\count137
+\c@subfigure@save=\count138
+\c@lofdepth=\count139
+\c@subtable=\count140
+\c@subtable@save=\count141
+\c@lotdepth=\count142
 \sf@top=\skip56
 \sf@bottom=\skip57
 )
@@ -573,7 +574,7 @@ Package etexcmds Info: Could not find \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 )))
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2018/01/30 v0.27 Utility functions of pdfTeX for LuaTeX (HO
+Package: pdftexcmds 2018/01/21 v0.26 Utility functions of pdfTeX for LuaTeX (HO
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
@@ -586,11 +587,11 @@ Package grffile Info: Option `space' is set to `true'.
 Package grffile Info: \Gin@ii of package `graphicx' fixed on input line 494.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/mwe/mwe.sty
-Package: mwe 2018/03/30 v0.5 Package to support minimal working examples (MWE)
+Package: mwe 2017/12/10 v0.4 Package to support minimal working examples (MWE)
 
 (/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty
 Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
-\c@lips@count=\count144
+\c@lips@count=\count143
 )
 (/usr/share/texlive/texmf-dist/tex/latex/blindtext/blindtext.sty
 Package: blindtext 2012/01/06 V2.0 blindtext-Package
@@ -598,24 +599,24 @@ Package: blindtext 2012/01/06 V2.0 blindtext-Package
 (/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
-\c@blindtext=\count145
-\c@Blindtext=\count146
-\c@blind@countparstart=\count147
-\blind@countxx=\count148
-\blindtext@numBlindtext=\count149
-\blind@countyy=\count150
-\c@blindlist=\count151
-\c@blindlistlevel=\count152
-\c@blindlist@level=\count153
-\blind@listitem=\count154
-\c@blind@listcount=\count155
-\c@blind@levelcount=\count156
-\blind@mathformula=\count157
-\blind@Mathformula=\count158
-\c@blind@randomcount=\count159
-\c@blind@randommax=\count160
-\c@blind@pangramcount=\count161
-\c@blind@pangrammax=\count162
+\c@blindtext=\count144
+\c@Blindtext=\count145
+\c@blind@countparstart=\count146
+\blind@countxx=\count147
+\blindtext@numBlindtext=\count148
+\blind@countyy=\count149
+\c@blindlist=\count150
+\c@blindlistlevel=\count151
+\c@blindlist@level=\count152
+\blind@listitem=\count153
+\c@blind@listcount=\count154
+\c@blind@levelcount=\count155
+\blind@mathformula=\count156
+\blind@Mathformula=\count157
+\c@blind@randomcount=\count158
+\c@blind@randommax=\count159
+\c@blind@pangramcount=\count160
+\c@blind@pangrammax=\count161
 )) (./report.aux)
 \openout1 = `report.aux'.
 
@@ -637,16 +638,16 @@ File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 )
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count163
+\scratchcounter=\count162
 \scratchdimen=\dimen180
 \scratchbox=\box42
-\nofMPsegments=\count164
-\nofMParguments=\count165
+\nofMPsegments=\count163
+\nofMParguments=\count164
 \everyMPshowfont=\toks40
-\MPscratchCnt=\count166
+\MPscratchCnt=\count165
 \MPscratchDim=\dimen181
-\MPnumerator=\count167
-\makeMPintoPDFobject=\count168
+\MPnumerator=\count166
+\makeMPintoPDFobject=\count167
 \everyMPtoPDFconversion=\toks41
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -669,13 +670,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EveryShipout initializing macros
-
-Package todonotes Warning: The length marginparwidth is less than 2cm and will 
-most likely cause issues with the appearance of inserted todonotes. The issue c
-an be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to 
-loading the todonotes package. on input line 42.
-
-\c@lstlisting=\count169
+\c@lstlisting=\count168
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
@@ -684,38 +679,34 @@ File: images/standrewslogo.png Graphic file (type png)
 <use images/standrewslogo.png>
 Package pdftex.def Info: images/standrewslogo.png  used on input line 84.
 (pdftex.def)             Requested size: 88.2037pt x 107.56636pt.
-[1
+ [1
 
-{/usr/share/texlive/texmf-dist/fonts/map/pdftex/updmap/pdftex.map} <./images/st
-andrewslogo.png>]
-<images/part1pretest.png, id=16, 366.36874pt x 160.6pt>
-File: images/part1pretest.png Graphic file (type png)
-<use images/part1pretest.png>
-Package pdftex.def Info: images/part1pretest.png  used on input line 108.
-(pdftex.def)             Requested size: 157.94785pt x 69.23798pt.
-<images/part1posttest.png, id=17, 372.39125pt x 191.71625pt>
-File: images/part1posttest.png Graphic file (type png)
-<use images/part1posttest.png>
-Package pdftex.def Info: images/part1posttest.png  used on input line 114.
-(pdftex.def)             Requested size: 157.94785pt x 81.31596pt.
- (./report.bbl [1 <./images/part1pretest.png> <./images/part1posttest.png>]) [2
-] (./report.aux) ) 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./images/standrewslogo.png
+>]
+Overfull \hbox (13.72395pt too wide) in paragraph at lines 104--105
+\OT1/cmr/m/n/12 PTHREAD[]RECURSVIE[]DISABLE). This pro-vides block-ing be-havio
+ur, where
+ []
+
+[1] (./report.bbl) [2] (./report.aux) ) 
 Here is how much of TeX's memory you used:
- 16924 strings out of 492671
- 317109 string characters out of 6133225
- 490669 words of memory out of 5000000
- 20476 multiletter control sequences out of 15000+600000
- 10111 words of font info for 36 fonts, out of 8000000 for 9000
- 1137 hyphenation exceptions out of 8191
- 62i,8n,96p,492b,419s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc
-10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on report.pdf (3 pages, 107619 bytes).
+ 16883 strings out of 494880
+ 316138 string characters out of 6179601
+ 480410 words of memory out of 5000000
+ 19870 multiletter control sequences out of 15000+600000
+ 10627 words of font info for 38 fonts, out of 8000000 for 9000
+ 36 hyphenation exceptions out of 8191
+ 62i,5n,96p,906b,268s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+tt12.pfb>
+Output written on report.pdf (3 pages, 106850 bytes).
 PDF statistics:
  40 PDF objects out of 1000 (max. 8388607)
- 24 compressed objects within 1 object stream
+ 27 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 28 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 18 words of extra memory for PDF output out of 10000 (max. 10000000)
 

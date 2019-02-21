@@ -4,7 +4,6 @@
 
 typedef struct CAccount {
     int balance;
-    pthread_mutex_t lock;
 } CAccount;
 
 CAccount* createAccount(int initialValue) {

@@ -101,29 +101,17 @@ The interface for the account is provided in \emph{account.h}. Since C doesn't s
 
 \part{Locking}
 
-The locking account struct involved two fields, the account balance and the account lock. This lock would have to be obtained in order for a method to make changes to the balance. The account creation method would initialise the mutex with the default attributes (PTHREAD_PRIO_INHERIT and PTHREAD_RECURSVIE_DISABLE). This provides blocking behaviour, where the thread will wait until it's able to obtain the lock. The mutex initialisation is included in the creation method to avoid multiple threads trying to initialise the lock later when it becomes needed.
+The locking account struct involved two fields, the account balance and the account lock. This lock would have to be obtained in order for a method to make changes to the balance. The account creation method would initialise the mutex with the default attributes (PTHREAD\_PRIO\_INHERIT and PTHREAD\_RECURSVIE\_DISABLE). This provides blocking behaviour, where the thread will wait until it's able to obtain the lock. The mutex initialisation is included in the creation method to avoid multiple threads trying to initialise the lock later when it becomes needed.
 
-Each method for interacting with the account struct would first obtain the lock. This is necessary to ensure that the balance variable will not be written to while reading, or written to by multiple threads simultaneously. The implementation is analagous to using the Synchronised keyword on each method in Java as essentially only one thread can operate on the object at any one time. 
+Each method for interacting with the account struct first obtains the lock. This is necessary to ensure that the balance variable will not be written to while reading, or written to by multiple threads simultaneously. The implementation is analagous to using the Synchronised keyword on each method in Java as essentially only one thread can operate on the object at any one time. Initially, a lock was not required for reading as it was assumed that the read would be atomic in the sense that a write could not happen simulatenously and return the half-written value at the relevant memory address. However, further reading showed that this behaviour was undefined, since this kind of atomic read for word-sized variables (i.e. int) was completely dependent on the compiler and architecture of the system. [\url{http://www.alexonlinux.com/do-you-need-mutex-to-protect-int}]
 
-For the destruction method, it is assumed that this would be called once all threads are finished operating on it. Realistically, there should be checks for success after calling the \emph{pthread_mutex_destroy} method as destroying a mutex that is currently held by another thread can produce undefined behaviour [http://pubs.opengroup.org/onlinepubs/009695399/functions/pthread_mutex_destroy.html].
+For the destruction method, it is assumed that this would be called once all threads are finished operating on it. Realistically, there should be checks for success after calling the \emph{pthread\_mutex\_destroy} method as destroying a mutex that is currently held by another thread can produce undefined behaviour [\url{http://pubs.opengroup.org/onlinepubs/009695399/functions/pthread_mutex_destroy.html}].
 
-\part{Single Client Game}
+The lock implementation can be compiled by running \emph{make locking} to produce the executable. \cite{createreactapp}
 
-\begin{figure}[!ht]
-    \centering
-    \begin{minipage}{0.45\textwidth}
-        \centering
-        \includegraphics[width=0.9\textwidth]{images/part1pretest} % first figure itself
-        \caption{Before Press}
-        \label{fig:beforepress}
-    \end{minipage}\hfill
-    \begin{minipage}{0.45\textwidth}
-        \centering
-        \includegraphics[width=0.9\textwidth]{images/part1posttest} % second figure itself
-        \caption{After Press}
-        \label{fig:afterpress}
-    \end{minipage}
-\end{figure}
+\part{Lock Free}
+
+The lock free account structure remained the same, but without the mutex. Since mutexes are surprisingly large on linux systems (24 bytes on 32-bit machines, and 40 bytes on 64-bit machines \url{https://github.com/dpw/skinny-mutex}), this already had advantages in terms of memory usage if a large number of the CAccount structs were to be in use. 
 
 \part*{Conclusion}
 
