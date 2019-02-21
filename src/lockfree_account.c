@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <pthread.h>
+#include <stdatomic.h>
 #include "account.h"
 
 typedef struct CAccount {
@@ -9,32 +10,34 @@ typedef struct CAccount {
 CAccount* createAccount(int initialValue) {
     CAccount* account = (CAccount*) malloc(sizeof(CAccount));
     account->balance = initialValue;
-    pthread_mutex_init(& (account->lock), NULL);
     return account;
 }
 
 int getBalance(CAccount* account) {
-    int val;
-    pthread_mutex_lock(& (account->lock));
-    val = account->balance;
-    pthread_mutex_unlock(& (account->lock));
-    return val;
+    return account->balance;
 }
 
 void deposit(CAccount* account, int amount) {
-    pthread_mutex_lock(& (account->lock));
-    account->balance += amount;
-    pthread_mutex_unlock(& (account->lock));
+    int expected;
+    int new;
+    int* pCurrent = &(account->balance);
+    do {
+        expected = *pCurrent;
+        new = expected + amount;
+    } while (!__sync_bool_compare_and_swap(pCurrent, expected, new));
 }
 
 int withdraw(CAccount* account, int amount) {
-    pthread_mutex_lock(& (account->lock));
-    account->balance -= amount;
-    pthread_mutex_unlock(& (account->lock));
+    int expected;
+    int new;
+    int* pCurrent = &(account->balance);
+    do {
+        expected = *pCurrent;
+        new = expected - amount;
+    } while (!__sync_bool_compare_and_swap(pCurrent, expected, new));
     return amount;
 }
 
 void destroyAccount(CAccount* account) {
-    pthread_mutex_destroy(& (account->lock));
     free(account);
 }
