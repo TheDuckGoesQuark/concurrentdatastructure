@@ -97,27 +97,35 @@ The goal of this practical was to implement and compare a locking and lock free 
 
 To allow for thorough analysis, the C language was chosen for this practical. This would allow both data structure implementations to use fairly low level operations whilst maintaining a reasonable level of readability and ease of development. Since the gcc compiler can also provide the resulting assembly code, this could also be analysed when comparing lock free and locking implementations. Comparing the effects of compiler optimisation on the locking code could also be considered. 
 
-The interface for the account is provided in \emph{account.h}. Since C doesn't support classes, the methods described in the practical specification were altered to also take an account pointer as an argument. A create and destroy method were also provided to allocate and free any memory used by the account struct.
+The interface for the account is provided in \emph{account.h}. Since C doesn't support classes, the methods described in the practical specification were altered to also take an account pointer as an argument. Create and destroy methods were also provided to allocate and free any memory used by the account struct.
 
 \part{Locking}
 
 The locking account struct involved two fields, the account balance and the account lock. This lock would have to be obtained in order for a method to make changes to the balance. The account creation method would initialise the mutex with the default attributes (PTHREAD\_PRIO\_INHERIT and PTHREAD\_RECURSVIE\_DISABLE). This provides blocking behaviour, where the thread will wait until it's able to obtain the lock. The mutex initialisation is included in the creation method to avoid multiple threads trying to initialise the lock later when it becomes needed.
 
-Each method for interacting with the account struct first obtains the lock. This is necessary to ensure that the balance variable will not be written to while reading, or written to by multiple threads simultaneously. The implementation is analagous to using the Synchronised keyword on each method in Java as essentially only one thread can operate on the object at any one time. Initially, a lock was not required for reading as it was assumed that the read would be atomic in the sense that a write could not happen simulatenously and return the half-written value at the relevant memory address. However, further reading showed that this behaviour was undefined, since this kind of atomic read for word-sized variables (i.e. int) was completely dependent on the compiler and architecture of the system. [\url{http://www.alexonlinux.com/do-you-need-mutex-to-protect-int}]
+Each method for interacting with the account struct first obtains the lock. This is necessary to ensure that the balance variable will not be written to while reading, or written to by multiple threads simultaneously. The implementation is analagous to using the Synchronised keyword on each method in Java as essentially only one thread can operate on the object at any one time. Initially, a lock was not required for reading as it was assumed that the read would be atomic in the sense that a write could not happen simulatenously and return the half-written value at the relevant memory address. However, further reading showed that this behaviour was undefined, since this kind of atomic read for word-sized variables (i.e. int) was completely dependent on the compiler and architecture of the system \cite{mutexAtomic}. 
 
-For the destruction method, it is assumed that this would be called once all threads are finished operating on it. Realistically, there should be checks for success after calling the \emph{pthread\_mutex\_destroy} method as destroying a mutex that is currently held by another thread can produce undefined behaviour [\url{http://pubs.opengroup.org/onlinepubs/009695399/functions/pthread_mutex_destroy.html}].
+For the destruction method, it is assumed that this would be called once all threads are finished operating on it. Realistically, there should be checks for success after calling the \emph{pthread\_mutex\_destroy} method as destroying a mutex that is currently held by another thread can produce undefined behaviour \cite{mutexUndefined}.
 
-The locking mechanism has the potential to suffer from the stampede issue discussed in lecture, and so another implementation was provided that used expoential backoff to try and mitigate this issue.
+The locking mechanism has the potential to suffer from the stampede issue discussed in lecture, and so another implementation was provided that used expoential backoff to try and mitigate this issue. This was done by adding a function for obtaining the lock, which would initially wait a given time before trying again, and double this delay after each failure. A maximum was set to avoid ridiculous wait times which when reached reset the delay back to the initial value.
 
-The lock implementation can be compiled by running \emph{make locking} to produce the executable. \cite{createreactapp}
+Since the lock is obtained and released within each method, it is not possible for a thread to hold multiple locks, or wait on another lock while holding one. Because of this, deadlock is not possible. 
+
+The lock implementation can be compiled by running \emph{make locking} to produce the executable, and the backoff implementation by running \emph{make locking\_backoff}. 
 
 \part{Lock Free}
 
-The lock free account structure remained the same, but without the mutex. Since mutexes are surprisingly large on linux systems (24 bytes on 32-bit machines, and 40 bytes on 64-bit machines \url{https://github.com/dpw/skinny-mutex}), this already had advantages in terms of memory usage if a large number of the CAccount structs were to be in use. 
+The lock free account structure remained the same, but without the mutex. Since mutexes are surprisingly large on linux systems (24 bytes on 32-bit machines, and 40 bytes on 64-bit machines \cite{mutexSize}, this already had advantages in terms of memory usage if a large number of the CAccount structs were to be in use. 
 
 The builtin \emph{atomic\_compare\_exchange\_weak} builtin from \emph{stdatomic.h} was used to provide lock free concurrent access to the balance. A simple while loop would check if the value in expected matches the desired value, and try again if not. Since the atomic function would write the actual value to the expected variable if the values did not match, the loop could try continuously.
 
 Possible issues with this implementation is the potential waste of resources caused by the constant spinning.
+
+The lock free implementation can be compiled by running \emph{make lockfree}.
+
+\part{Tests}
+
+To test the correctness of the different implementations, each of them were run with an increasing number of threads. Each thread knew its index in the pthread_t array, and so even indices would withdraw from the account and odd would deposit. All threads would repeat this action 1000 times before terminating.
 
 \part*{Conclusion}
 

@@ -9,8 +9,8 @@ locking: account.h main.c locking_account.c
 locking_backoff: account.h main.c locking_backoff_account.c
 	$(CC) -o $@ $^ $(LDFLAGS)
 
+all: lockfree locking locking_backoff
+
 .PHONY: clean
 clean:
 	rm -f $(obj) *.o lockfree locking locking_backoff
-
-# http://nuclear.mutantstargoat.com/articles/make/#simpler-makefile

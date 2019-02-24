@@ -9,33 +9,23 @@ CAccount* account;
 
 void* repeatedlyWithdraw(void* arg) {
     int selfId = *((int *) arg);
-    printf("\nThread [%d] started.", selfId);
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < 1000; i++) {
         withdraw(account, 2);
     }
-
-    printf("\nThread [%d] complete.", selfId);
-
     free(arg);
     return NULL;
 }
 
 void* repeatedlyDeposit(void* arg) {
     int selfId = *((int *) arg);
-    printf("\nThread [%d] started.", selfId);
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < 1000; i++) {
         deposit(account, 2);
     }
-
-    printf("\nThread [%d] complete.", selfId);
-
     free(arg);
     return NULL;
 }
 
-int main() {
-
-    int nThreads = 10;
+void testWithNThreads(int nThreads) {
     pthread_t tid[nThreads];
     int i = 0;
 
@@ -61,7 +51,13 @@ int main() {
         pthread_join(tid[j], NULL);
     }
 
-    printf("\nFinal value of account: %d", getBalance(account));
+    printf("\nnThreads: %d, balance: %d", nThreads, getBalance(account));
 
     destroyAccount(account);
+}
+
+int main() {
+    for (int nThreads = 1; nThreads < 100; nThreads++) {
+        testWithNThreads(nThreads);
+    }
 }

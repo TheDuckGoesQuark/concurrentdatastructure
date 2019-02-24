@@ -1,7 +1,24 @@
 \begin{thebibliography}{1}
 
-\bibitem{createreactapp}
-Facebook.
-\newblock create-react-app.
+\bibitem{mutexAtomic}
+Alexandar Sandler.
+\newblock Do you need a mutex to protect an int?
+\newblock \url{http://www.alexonlinux.com/do-you-need-mutex-to-protect-int},
+  2008.
+\newblock Accessed: 2019-02-20.
+
+\bibitem{mutexUndefined}
+IEEE Std.
+\newblock pthread\_mutex\_destroy.
+\newblock
+  \url{http://pubs.opengroup.org/onlinepubs/009695399/functions/pthread_mutex_destroy.html},
+  2004.
+\newblock Accessed: 2019-02-21.
+
+\bibitem{mutexSize}
+dpw.
+\newblock skinny-mutex.
+\newblock \url{https://github.com/dpw/skinny-mutex}.
+\newblock Accessed: 2019-02-21.
 
 \end{thebibliography}
