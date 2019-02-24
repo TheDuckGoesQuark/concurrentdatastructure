@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.11.3)  24 FEB 2019 14:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.11.3)  24 FEB 2019 15:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -490,17 +490,58 @@ File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
 
+(/usr/share/texlive/texmf-dist/tex/latex/tabu/tabu.sty
+Package: tabu 2011/02/26 v2.8 - flexible LaTeX tabulars (FC)
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
+\col@sep=\dimen167
+\extrarowheight=\dimen168
+\NC@list=\toks39
+\extratabsurround=\skip51
+\backup@length=\skip52
+)
+(/usr/share/texlive/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box41
+\sift@deathcycles=\count135
+\@vwid@loff=\dimen169
+\@vwid@roff=\dimen170
+)
+\c@taburow=\count136
+\tabu@nbcols=\count137
+\tabu@cnt=\count138
+\tabu@Xcol=\count139
+\tabu@alloc=\count140
+\tabu@nested=\count141
+\tabu@target=\dimen171
+\tabu@spreadtarget=\dimen172
+\tabu@naturalX=\dimen173
+\tabucolX=\dimen174
+\tabu@Xsum=\dimen175
+\extrarowdepth=\dimen176
+\abovetabulinesep=\dimen177
+\belowtabulinesep=\dimen178
+\tabustrutrule=\dimen179
+\tabu@thebody=\toks40
+\tabu@footnotes=\toks41
+\tabu@box=\box42
+\tabu@arstrutbox=\box43
+\tabu@hleads=\box44
+\tabu@vleads=\box45
+\tabu@cellskip=\skip53
+)
 (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
-\ttl@box=\box41
-\beforetitleunit=\skip51
-\aftertitleunit=\skip52
-\ttl@plus=\dimen167
-\ttl@minus=\dimen168
-\ttl@toksa=\toks39
-\titlewidth=\dimen169
-\titlewidthlast=\dimen170
-\titlewidthfirst=\dimen171
+\ttl@box=\box46
+\beforetitleunit=\skip54
+\aftertitleunit=\skip55
+\ttl@plus=\dimen180
+\ttl@minus=\dimen181
+\ttl@toksa=\toks42
+\titlewidth=\dimen182
+\titlewidthlast=\dimen183
+\titlewidthfirst=\dimen184
 )
 (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip11
@@ -515,30 +556,30 @@ Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
-\captionmargin=\dimen172
-\captionmargin@=\dimen173
-\captionwidth=\dimen174
-\caption@tempdima=\dimen175
-\caption@indent=\dimen176
-\caption@parindent=\dimen177
-\caption@hangindent=\dimen178
+\captionmargin=\dimen185
+\captionmargin@=\dimen186
+\captionwidth=\dimen187
+\caption@tempdima=\dimen188
+\caption@indent=\dimen189
+\caption@parindent=\dimen190
+\caption@hangindent=\dimen191
 )
-\c@ContinuedFloat=\count135
+\c@ContinuedFloat=\count142
 Package caption Info: listings package is loaded.
 )
-\c@KVtest=\count136
-\sf@farskip=\skip53
-\sf@captopadj=\dimen179
-\sf@capskip=\skip54
-\sf@nearskip=\skip55
-\c@subfigure=\count137
-\c@subfigure@save=\count138
-\c@lofdepth=\count139
-\c@subtable=\count140
-\c@subtable@save=\count141
-\c@lotdepth=\count142
-\sf@top=\skip56
-\sf@bottom=\skip57
+\c@KVtest=\count143
+\sf@farskip=\skip56
+\sf@captopadj=\dimen192
+\sf@capskip=\skip57
+\sf@nearskip=\skip58
+\c@subfigure=\count144
+\c@subfigure@save=\count145
+\c@lofdepth=\count146
+\c@subtable=\count147
+\c@subtable@save=\count148
+\c@lotdepth=\count149
+\sf@top=\skip59
+\sf@bottom=\skip60
 )
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grffile.sty
 Package: grffile 2017/06/30 v1.18 Extended file name support for graphics (HO)
@@ -591,7 +632,7 @@ Package: mwe 2017/12/10 v0.4 Package to support minimal working examples (MWE)
 
 (/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty
 Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
-\c@lips@count=\count143
+\c@lips@count=\count150
 )
 (/usr/share/texlive/texmf-dist/tex/latex/blindtext/blindtext.sty
 Package: blindtext 2012/01/06 V2.0 blindtext-Package
@@ -599,56 +640,56 @@ Package: blindtext 2012/01/06 V2.0 blindtext-Package
 (/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
-\c@blindtext=\count144
-\c@Blindtext=\count145
-\c@blind@countparstart=\count146
-\blind@countxx=\count147
-\blindtext@numBlindtext=\count148
-\blind@countyy=\count149
-\c@blindlist=\count150
-\c@blindlistlevel=\count151
-\c@blindlist@level=\count152
-\blind@listitem=\count153
-\c@blind@listcount=\count154
-\c@blind@levelcount=\count155
-\blind@mathformula=\count156
-\blind@Mathformula=\count157
-\c@blind@randomcount=\count158
-\c@blind@randommax=\count159
-\c@blind@pangramcount=\count160
-\c@blind@pangrammax=\count161
+\c@blindtext=\count151
+\c@Blindtext=\count152
+\c@blind@countparstart=\count153
+\blind@countxx=\count154
+\blindtext@numBlindtext=\count155
+\blind@countyy=\count156
+\c@blindlist=\count157
+\c@blindlistlevel=\count158
+\c@blindlist@level=\count159
+\blind@listitem=\count160
+\c@blind@listcount=\count161
+\c@blind@levelcount=\count162
+\blind@mathformula=\count163
+\blind@Mathformula=\count164
+\c@blind@randomcount=\count165
+\c@blind@randommax=\count166
+\c@blind@pangramcount=\count167
+\c@blind@pangrammax=\count168
 )) (./report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
 
 (/usr/share/texlive/texmf-dist/tex/latex/ucs/ucsencs.def
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 )
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count162
-\scratchdimen=\dimen180
-\scratchbox=\box42
-\nofMPsegments=\count163
-\nofMParguments=\count164
-\everyMPshowfont=\toks40
-\MPscratchCnt=\count165
-\MPscratchDim=\dimen181
-\MPnumerator=\count166
-\makeMPintoPDFobject=\count167
-\everyMPtoPDFconversion=\toks41
+\scratchcounter=\count169
+\scratchdimen=\dimen193
+\scratchbox=\box47
+\nofMPsegments=\count170
+\nofMParguments=\count171
+\everyMPshowfont=\toks43
+\MPscratchCnt=\count172
+\MPscratchDim=\dimen194
+\MPnumerator=\count173
+\makeMPintoPDFobject=\count174
+\everyMPtoPDFconversion=\toks44
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -670,81 +711,107 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EveryShipout initializing macros
-\c@lstlisting=\count168
+\c@lstlisting=\count175
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
 <images/standrewslogo.png, id=4, 185.19188pt x 225.84375pt>
 File: images/standrewslogo.png Graphic file (type png)
 <use images/standrewslogo.png>
-Package pdftex.def Info: images/standrewslogo.png  used on input line 84.
+Package pdftex.def Info: images/standrewslogo.png  used on input line 86.
 (pdftex.def)             Requested size: 88.2037pt x 107.56636pt.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./images/standrewslogo.png
 >]
-Overfull \hbox (13.72395pt too wide) in paragraph at lines 104--105
+Overfull \hbox (13.72395pt too wide) in paragraph at lines 106--107
 \OT1/cmr/m/n/12 PTHREAD[]RECURSVIE[]DISABLE). This pro-vides block-ing be-havio
 ur, where
  []
 
 [1] [2]
-Overfull \hbox (19.08842pt too wide) in paragraph at lines 132--133
-[]\OT1/cmr/m/n/12 The er-ra-ne-ous lock-free im-ple-men-ta-tion of de-posit us-
-ing the $\OT1/cmtt/m/n/12 atomic _ compare _
- []
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 155.
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 134.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 134.
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 136.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 155.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 157.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 136.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 157.
 
-Overfull \hbox (82.34918pt too wide) in paragraph at lines 140--141
+Overfull \hbox (82.34918pt too wide) in paragraph at lines 161--162
 [][][][][][][][][][][][][][] 
  []
 
-[3]
-Overfull \hbox (96.44916pt too wide) in paragraph at lines 155--156
-[][][][][][][][][][][][][][][][][][] 
+
+Overfull \hbox (19.08842pt too wide) in paragraph at lines 153--165
+[]\OT1/cmr/m/n/12 The er-ra-ne-ous lock-free im-ple-men-ta-tion of de-posit us-
+ing the $\OT1/cmtt/m/n/12 atomic _ compare _
  []
 
-(./report.bbl
+[3] (./report.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 11--17
 \OT1/cmtt/m/n/12 onlinepubs / 009695399 / functions / pthread _ mutex _ destroy
  . html$\OT1/cmr/m/n/12 ,
  []
 
-) [4] (./report.aux) ) 
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-0.def
+File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
+)
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-32.def
+File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
+)
+Underfull \hbox (badness 4144) in paragraph at lines 25--31
+[]\OT1/cmr/m/n/12 Intel.  Intel[] 64 and ia-32 ar-chi-tec-tures soft-ware de-ve
+l-oper's
+ []
+
+
+Underfull \hbox (badness 4036) in paragraph at lines 25--31
+\OT1/cmr/m/n/12 man-ual com-bined vol-umes: 1, 2a, 2b, 2c, 2d, 3a, 3b, 3c,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--31
+\OT1/cmr/m/n/12 3d, and 4.  $\OT1/cmtt/m/n/12 https : / / software . intel . co
+m / en-[]us / download /
+ []
+
+
+Overfull \hbox (165.9167pt too wide) in paragraph at lines 25--31
+\OT1/cmtt/m/n/12 intel-[]64-[]and-[]ia-[]32-[]architectures-[]sdm-[]combined-[]
+volumes-[]1-[]2a-[]2b-[]2c-[]2d-[]3a-[]3b-[]3c-[]3d-[]and-[]4$\OT1/cmr/m/n/12 .
+
+ []
+
+[4]) [5] (./report.aux) ) 
 Here is how much of TeX's memory you used:
- 17183 strings out of 494880
- 318815 string characters out of 6179601
- 486440 words of memory out of 5000000
- 20164 multiletter control sequences out of 15000+600000
+ 18709 strings out of 494880
+ 337775 string characters out of 6179601
+ 503222 words of memory out of 5000000
+ 21674 multiletter control sequences out of 15000+600000
  10627 words of font info for 38 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 62i,6n,96p,852b,1525s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on report.pdf (5 pages, 129125 bytes).
+ 62i,14n,96p,852b,1373s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
+i12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on report.pdf (6 pages, 139500 bytes).
 PDF statistics:
- 54 PDF objects out of 1000 (max. 8388607)
- 37 compressed objects within 1 object stream
+ 61 PDF objects out of 1000 (max. 8388607)
+ 42 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 
