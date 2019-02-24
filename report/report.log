@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.11.3)  24 FEB 2019 14:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.11.3)  24 FEB 2019 14:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -688,30 +688,63 @@ Overfull \hbox (13.72395pt too wide) in paragraph at lines 104--105
 ur, where
  []
 
-[1] [2] (./report.bbl
+[1] [2]
+Overfull \hbox (19.08842pt too wide) in paragraph at lines 132--133
+[]\OT1/cmr/m/n/12 The er-ra-ne-ous lock-free im-ple-men-ta-tion of de-posit us-
+ing the $\OT1/cmtt/m/n/12 atomic _ compare _
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 134.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 134.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 136.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 136.
+
+Overfull \hbox (82.34918pt too wide) in paragraph at lines 140--141
+[][][][][][][][][][][][][][] 
+ []
+
+[3]
+Overfull \hbox (96.44916pt too wide) in paragraph at lines 155--156
+[][][][][][][][][][][][][][][][][][] 
+ []
+
+(./report.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 11--17
 \OT1/cmtt/m/n/12 onlinepubs / 009695399 / functions / pthread _ mutex _ destroy
  . html$\OT1/cmr/m/n/12 ,
  []
 
-) [3] (./report.aux) ) 
+) [4] (./report.aux) ) 
 Here is how much of TeX's memory you used:
- 16889 strings out of 494880
- 316246 string characters out of 6179601
- 480440 words of memory out of 5000000
- 19876 multiletter control sequences out of 15000+600000
+ 17183 strings out of 494880
+ 318815 string characters out of 6179601
+ 486440 words of memory out of 5000000
+ 20164 multiletter control sequences out of 15000+600000
  10627 words of font info for 38 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 62i,5n,96p,852b,329s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,6n,96p,852b,1525s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on report.pdf (4 pages, 110920 bytes).
+mcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on report.pdf (5 pages, 129125 bytes).
 PDF statistics:
- 43 PDF objects out of 1000 (max. 8388607)
- 29 compressed objects within 1 object stream
+ 54 PDF objects out of 1000 (max. 8388607)
+ 37 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 

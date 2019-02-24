@@ -125,7 +125,36 @@ The lock free implementation can be compiled by running \emph{make lockfree}.
 
 \part{Tests}
 
-To test the correctness of the different implementations, each of them were run with an increasing number of threads. Each thread knew its index in the pthread_t array, and so even indices would withdraw from the account and odd would deposit. All threads would repeat this action 1000 times before terminating.
+To test the correctness of the different implementations, each of them were run with an increasing number of threads. Each thread knew its index in the pthread\_t array, and so even indices would withdraw from the account and odd would deposit. All threads would repeat this action 1000 times before terminating.
+
+The locking implementations showed no errors, and the end values were as expected. However, the lockfree implementation had issues, as the end value of the account was very inconsistent. 
+
+The erraneous lockfree implementation of deposit using the \url{atomic_compare_exchange_weak} function was as follows:
+\begin{lstlisting}
+void deposit(CAccount* account, int amount) {
+    int expected, desired;
+    int* pBalance = &(account->balance);
+    expected = *pBalance;
+    do {
+        desired = expected + amount;
+        atomic_compare_exchange_weak(pBalance, &expected, desired);
+    } while (expected != desired);
+}
+\end{lstlisting}
+
+Out of curiosity, the same method was written to use the deprecated \url{__sync_bool_compare_and_swap} builtin.
+
+\begin{lstlisting}
+void deposit(CAccount* account, int amount) {
+    int expected;
+    int new;
+    int* pCurrent = &(account->balance);
+    do {
+        expected = *pCurrent;
+        new = expected + amount;
+    } while (!__sync_bool_compare_and_swap(pCurrent, expected, new));
+}
+\end{lstlisting}
 
 \part*{Conclusion}
 
