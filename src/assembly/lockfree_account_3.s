@@ -36,10 +36,13 @@ getBalance:
 deposit:
 .LFB21:
 	.cfi_startproc
-.L6:
 	movl	(%rdi), %eax
-	leal	(%rax,%rsi), %edx
+	.p2align 4,,10
+	.p2align 3
+.L6:
+	leal	(%rsi,%rax), %edx
 	lock cmpxchgl	%edx, (%rdi)
+	cmpl	%eax, %edx
 	jne	.L6
 	rep ret
 	.cfi_endproc
@@ -51,12 +54,15 @@ deposit:
 withdraw:
 .LFB22:
 	.cfi_startproc
-.L10:
 	movl	(%rdi), %eax
+	.p2align 4,,10
+	.p2align 3
+.L9:
 	movl	%eax, %edx
 	subl	%esi, %edx
 	lock cmpxchgl	%edx, (%rdi)
-	jne	.L10
+	cmpl	%eax, %edx
+	jne	.L9
 	movl	%esi, %eax
 	ret
 	.cfi_endproc

@@ -17,7 +17,7 @@ void assignCurrentTimePlusDelay(struct timespec timeoutTime, long delay) {
     timeoutTime.tv_nsec += delay;
 }
 
-void obtainLock(CAccount* acccount) {
+void obtainLock(CAccount* account) {
     long delay = initial_delay_nsec;
 
     struct timespec timeoutTime;
@@ -28,11 +28,11 @@ void obtainLock(CAccount* acccount) {
         if (delay >= max_delay_nsec) {
             delay = initial_delay_nsec;
         }
-        assignCurrentTimePlusDelay(timeoutTime, delay)
+        assignCurrentTimePlusDelay(timeoutTime, delay);
     }
 }
 
-void releaseLock(CAccount* acccount) {
+void releaseLock(CAccount* account) {
     pthread_mutex_unlock(& (account->lock));
 }
 
@@ -45,20 +45,20 @@ CAccount* createAccount(int initialValue) {
 
 int getBalance(CAccount* account) {
     int val;
-    obtainLock(acount);
+    obtainLock(account);
     val = account->balance;
     releaseLock(account);
     return val;
 }
 
 void deposit(CAccount* account, int amount) {
-    obtainLock(acount);
+    obtainLock(account);
     account->balance += amount;
     releaseLock(account);
 }
 
 int withdraw(CAccount* account, int amount) {
-    obtainLock(acount);
+    obtainLock(account);
     account->balance -= amount;
     releaseLock(account);
     return amount;

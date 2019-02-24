@@ -11,6 +11,6 @@ locking_backoff: account.h main.c locking_backoff_account.c
 
 .PHONY: clean
 clean:
-	rm -f $(obj) *.o lockfree locking
+	rm -f $(obj) *.o lockfree locking locking_backoff
 
 # http://nuclear.mutantstargoat.com/articles/make/#simpler-makefile
