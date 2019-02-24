@@ -107,11 +107,17 @@ Each method for interacting with the account struct first obtains the lock. This
 
 For the destruction method, it is assumed that this would be called once all threads are finished operating on it. Realistically, there should be checks for success after calling the \emph{pthread\_mutex\_destroy} method as destroying a mutex that is currently held by another thread can produce undefined behaviour [\url{http://pubs.opengroup.org/onlinepubs/009695399/functions/pthread_mutex_destroy.html}].
 
+The locking mechanism has the potential to suffer from the stampede issue discussed in lecture, and so another implementation was provided that used expoential backoff to try and mitigate this issue.
+
 The lock implementation can be compiled by running \emph{make locking} to produce the executable. \cite{createreactapp}
 
 \part{Lock Free}
 
 The lock free account structure remained the same, but without the mutex. Since mutexes are surprisingly large on linux systems (24 bytes on 32-bit machines, and 40 bytes on 64-bit machines \url{https://github.com/dpw/skinny-mutex}), this already had advantages in terms of memory usage if a large number of the CAccount structs were to be in use. 
+
+The builtin \emph{atomic\_compare\_exchange\_weak} builtin from \emph{stdatomic.h} was used to provide lock free concurrent access to the balance. A simple while loop would check if the value in expected matches the desired value, and try again if not. Since the atomic function would write the actual value to the expected variable if the values did not match, the loop could try continuously.
+
+Possible issues with this implementation is the potential waste of resources caused by the constant spinning.
 
 \part*{Conclusion}
 

@@ -11,7 +11,6 @@ void* repeatedlyWithdraw(void* arg) {
     int selfId = *((int *) arg);
     printf("\nThread [%d] started.", selfId);
     for (int i = 0; i < 100; i++) {
-        printf("\nThread [%d] sees account value %d before withdraw.", selfId, getBalance(account));
         withdraw(account, 2);
     }
 
@@ -25,7 +24,6 @@ void* repeatedlyDeposit(void* arg) {
     int selfId = *((int *) arg);
     printf("\nThread [%d] started.", selfId);
     for (int i = 0; i < 100; i++) {
-        printf("\nThread [%d] sees account value %d before deposit.", selfId, getBalance(account));
         deposit(account, 2);
     }
 
@@ -37,11 +35,12 @@ void* repeatedlyDeposit(void* arg) {
 
 int main() {
 
-    pthread_t tid[2];
+    int nThreads = 10;
+    pthread_t tid[nThreads];
     int i = 0;
 
     account = createAccount(0);
-    while (i < 2) {
+    while (i < nThreads) {
         int* arg = malloc(sizeof(*arg));
         *arg = i;
 
@@ -58,8 +57,11 @@ int main() {
         i++;
     }
 
-    pthread_join(tid[0], NULL);
-    pthread_join(tid[1], NULL);
+    for (int j = 0; j < nThreads; j++) {
+        pthread_join(tid[j], NULL);
+    }
+
+    printf("\nFinal value of account: %d", getBalance(account));
 
     destroyAccount(account);
 }

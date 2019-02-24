@@ -18,23 +18,24 @@ int getBalance(CAccount* account) {
 }
 
 void deposit(CAccount* account, int amount) {
-    int expected;
-    int new;
-    int* pCurrent = &(account->balance);
+    int expected, desired;
+    int* pBalance = &(account->balance);
+    expected = *pBalance;
     do {
-        expected = *pCurrent;
-        new = expected + amount;
-    } while (!__sync_bool_compare_and_swap(pCurrent, expected, new));
+        desired = expected + amount;
+        atomic_compare_exchange_weak(pBalance, &expected, desired);
+    } while (expected != desired);
 }
 
 int withdraw(CAccount* account, int amount) {
-    int expected;
-    int new;
-    int* pCurrent = &(account->balance);
+    int expected, desired;
+    int* pBalance = &(account->balance);
+    expected = *pBalance;
     do {
-        expected = *pCurrent;
-        new = expected - amount;
-    } while (!__sync_bool_compare_and_swap(pCurrent, expected, new));
+        desired = expected - amount;
+        atomic_compare_exchange_weak(pBalance, &expected, desired);
+    } while (expected != desired);
+
     return amount;
 }
 
