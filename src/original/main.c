@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdio.h>
 #include <pthread.h>
 #include <stdlib.h>
 #include <string.h>
@@ -7,9 +6,11 @@
 
 CAccount* account;
 
+int NUM_TRIES_PER_THREAD = 1000;
+
 void* repeatedlyWithdraw(void* arg) {
     int selfId = *((int *) arg);
-    for (int i = 0; i < 1000; i++) {
+    for (int i = 0; i < NUM_TRIES_PER_THREAD; i++) {
         withdraw(account, 2);
     }
     free(arg);
@@ -18,7 +19,7 @@ void* repeatedlyWithdraw(void* arg) {
 
 void* repeatedlyDeposit(void* arg) {
     int selfId = *((int *) arg);
-    for (int i = 0; i < 1000; i++) {
+    for (int i = 0; i < NUM_TRIES_PER_THREAD; i++) {
         deposit(account, 2);
     }
     free(arg);
