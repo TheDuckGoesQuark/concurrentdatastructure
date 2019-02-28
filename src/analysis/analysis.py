@@ -1,6 +1,17 @@
 import csv
 import matplotlib.pyplot as plt
-import numpy as np
+
+
+def refactor_row(headers, row):
+    for header in headers:
+        if "Wait Time" in header:
+            row[header] = row[header] * (10 ** 6)
+
+    return row
+
+
+def refactor_column_name(column_name):
+    return column_name.replace("(s)", "(μs)")
 
 
 def readDataIntoDict(file):
@@ -15,7 +26,7 @@ def readDataIntoDict(file):
             test_tuples = []
             # Read as many tuples as there were threads involved
             for result_index in range(n_threads):
-                test_tuples.append(reader.__next__())
+                test_tuples.append(refactor_row(headers, reader.__next__()))
 
             results_dict[n_threads] = test_tuples
 
@@ -51,14 +62,14 @@ def get_axis_vals_for_column(data, column_name):
 
 def plot_and_save_columns(data, lockname):
     for column, values in data.items():
-        fig = plt.figure()
-        ax = plt.subplot()
+        column = refactor_column_name(column)
+        plt.figure()
         plt.scatter(values[0], values[1])
         plt.title("{} against increasing number of threads".format(column))
         plt.xlabel("Number of Threads")
         plt.ylabel(column)
+        plt.savefig("graphs/{}/{}.png".format(lockname, column.replace(" ", "_")))
         plt.show()
-        plt.savefig("graphs/{}/{}.png".format(lockname, column))
 
 
 # X Axis - nThreads
@@ -79,3 +90,5 @@ backoff_data = get_axis_vals_for_all_columns(backoff_data)
 plot_and_save_columns(lockfree_data, "lockfree")
 plot_and_save_columns(locking_data, "locking")
 plot_and_save_columns(backoff_data, "backoff")
+
+# TODO merge plots for each column
