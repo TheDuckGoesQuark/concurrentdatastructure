@@ -4,8 +4,8 @@
 #include <time.h>
 #include "account.h"
 
-long max_delay_nsec = 10000;
-long initial_delay_nsec = 1000;
+long max_delay_nsec = 10;
+long initial_delay_nsec = 1;
 
 typedef struct CAccount {
     int balance;

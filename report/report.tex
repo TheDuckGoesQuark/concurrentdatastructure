@@ -182,18 +182,25 @@ To test performance, two aspects were considered:
 
 Increasing the number of threads far past the number of threads that can be processed simultaneously would increase the effect of the scheduler on the results. Therefore equation \ref{eq:nthreads} was used to calculate the maximum number of simulateonously processable threads. For the architecture described earlier, $\textit{nthreads}_\textit{max} = 12 $. Up to 24 threads were used in the experiment out of curiosity, though the calculated value would be considered during analysis.
 
-
 \begin{equation}
 \label{eq:nthreads}
 	\textit{nthreads}_\textit{max} =
 	 \textit{threads per core} \times \textit{cores per socket} \times \textit{nSockets}
 \end{equation}
 
+Since the backoff lock could only use nanoseconds as the smallest unit, it was not possible to use values for maximum and initial delay that would be able to compete with the other lock implementations.
+
 \subsection{Setup}
 
 In order to capture the data needed, the functions would have to be slightly changed to capture the behaviour needed, and the process of recording data would have to be as unintrusive as possible. 
 
+This was achieved by passing an \url{Attempt} struct to each of the \url{CAccount} methods so that the number of attempts could be recorded. This would only add a few extra clock cycles after each attempt to gain the lock.
 
+The CPU clock time before and after the function call was used to obtain the time taken for the function to execute, and provide a rough value for the wait time.
+
+Before each experiement, memory was allocated for all the \url{Attempt} structs required for each thread, and freed afterwards. The max, min, and average values would be obtained for each thread, and printed to the console. To store the results, stdin was redirected to a csv file for later analysis.
+
+\subsection{Results}
 
 \part*{Conclusion}
 
