@@ -67,19 +67,21 @@ void testWithNThreads(int nThreads) {
 }
 
 void initialiseResultArray(int nThreads) {
-        for(int i = 0; i < nThreads; ++i) {
-            attemptArrays[i] = malloc(sizeof(Attempt) * NUM_TRIES_PER_THREAD);
-        }
+    attemptArrays = malloc(sizeof(Attempt*) * nThreads);
+    for(int i = 0; i < nThreads; ++i) {
+        attemptArrays[i] = malloc(sizeof(Attempt) * NUM_TRIES_PER_THREAD);
+    }
 }
 
 void recordAndFreeResultArray(int nThreads) {
-        for(int i = 0; i < nThreads; ++i) {
-            Attempt* attempts = attemptArrays[i];
-            for(int j = 0; j < NUM_TRIES_PER_THREAD; ++j) {
-                printf("\n%d, %d, %f", i, attempts[j].numTries, attempts[j].waitTime);
-            }
-            free(attempts);
+    for(int i = 0; i < nThreads; ++i) {
+        Attempt* attempts = attemptArrays[i];
+        for(int j = 0; j < NUM_TRIES_PER_THREAD; ++j) {
+            printf("\n%d, %d, %f", i, attempts[j].numTries, attempts[j].waitTime);
         }
+        free(attempts);
+    }
+    free(attemptArrays);
 }
 
 int main() {
