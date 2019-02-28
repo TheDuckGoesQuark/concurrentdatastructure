@@ -9,7 +9,7 @@
 
 CAccount* account;
 
-int NUM_TRIES_PER_THREAD = 1000;
+int NUM_TRIES_PER_THREAD = 100000;
 
 Attempt** attemptArrays;
 
@@ -111,8 +111,8 @@ void recordAndFreeResultArray(int nThreads) {
 }
 
 int main() {
-    for (int nThreads = 1; nThreads < 24; ++nThreads) {
-        printf("\nthreadId, averageNumTries, minNumTries, maxNumTries, averageWaitTime, minWaitTime, maxWaitTime");
+    for (int nThreads = 1; nThreads <= 24; ++nThreads) {
+        printf("\nthreadId, averageNumTries, minNumTries, maxNumTries, averageWaitTime, minWaitTime, maxWaitTime, nThreads=%d", nThreads);
         initialiseResultArray(nThreads);
         testWithNThreads(nThreads);
         recordAndFreeResultArray(nThreads);
