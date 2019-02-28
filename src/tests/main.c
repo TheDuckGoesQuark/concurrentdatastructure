@@ -111,7 +111,7 @@ void recordAndFreeResultArray(int nThreads) {
 }
 
 int main() {
-    for (int nThreads = 1; nThreads < 1000; nThreads*=2) {
+    for (int nThreads = 1; nThreads < 10000; nThreads*=2) {
         printf("\nthreadId, averageNumTries, minNumTries, maxNumTries, averageWaitTime, minWaitTime, maxWaitTime");
         initialiseResultArray(nThreads);
         testWithNThreads(nThreads);
