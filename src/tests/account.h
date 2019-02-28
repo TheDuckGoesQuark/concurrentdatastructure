@@ -1,7 +1,7 @@
 typedef struct CAccount CAccount;
 
 typedef struct Attempt {
-    int numTries;
+    unsigned int numTries;
     double waitTime;
 } Attempt;
 

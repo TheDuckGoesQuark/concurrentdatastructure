@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <pthread.h>
+#include <float.h>
+#include <limits.h>
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
@@ -7,7 +9,7 @@
 
 CAccount* account;
 
-int NUM_TRIES_PER_THREAD = 1000;
+int NUM_TRIES_PER_THREAD = 500;
 
 Attempt** attemptArrays;
 
@@ -69,25 +71,48 @@ void testWithNThreads(int nThreads) {
 void initialiseResultArray(int nThreads) {
     attemptArrays = malloc(sizeof(Attempt*) * nThreads);
     for(int i = 0; i < nThreads; ++i) {
-        attemptArrays[i] = malloc(sizeof(Attempt) * NUM_TRIES_PER_THREAD);
+        attemptArrays[i] = calloc(NUM_TRIES_PER_THREAD, sizeof(Attempt));
     }
 }
 
 void recordAndFreeResultArray(int nThreads) {
     for(int i = 0; i < nThreads; ++i) {
         Attempt* attempts = attemptArrays[i];
+        double totalWaitTime = 0;
+        double maxWaitTime = 0;
+        double minWaitTime = DBL_MAX;
+
+        unsigned int totalTries = 0;
+        unsigned int maxTries = 0;
+        unsigned int minTries = UINT_MAX;
+
         for(int j = 0; j < NUM_TRIES_PER_THREAD; ++j) {
-            printf("\n%d, %d, %f", i, attempts[j].numTries, attempts[j].waitTime);
+            unsigned int numTries = attempts[j].numTries;
+            double waitTime = attempts[j].waitTime;
+
+            totalWaitTime += waitTime;
+            totalTries += numTries;
+
+            if (numTries > maxTries) maxTries = numTries;
+            if (numTries < minTries) minTries = numTries;
+
+            if (waitTime > maxWaitTime) maxWaitTime = waitTime;
+            if (waitTime < minWaitTime) minWaitTime = waitTime;
         }
+
+        double averageWaitTime = totalWaitTime / (double) NUM_TRIES_PER_THREAD;
+        double averageNumTries = (double) totalTries / (double) NUM_TRIES_PER_THREAD;
+
+        printf("\n%d, %f, %d, %d, %f, %f, %f", i, averageNumTries, minTries, maxTries, averageWaitTime, minWaitTime, maxWaitTime);
+
         free(attempts);
     }
     free(attemptArrays);
 }
 
 int main() {
-    for (int nThreads = 1; nThreads < 100; nThreads++) {
-        printf("\nUSING %d THREADS", nThreads);
-        printf("\nthreadId, numTries, waitTime");
+    for (int nThreads = 1; nThreads < 1000; nThreads*=2) {
+        printf("\nthreadId, averageNumTries, minNumTries, maxNumTries, averageWaitTime, minWaitTime, maxWaitTime");
         initialiseResultArray(nThreads);
         testWithNThreads(nThreads);
         recordAndFreeResultArray(nThreads);
