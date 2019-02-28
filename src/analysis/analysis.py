@@ -1,5 +1,7 @@
 import csv
 import matplotlib.pyplot as plt
+import numpy as np
+from matplotlib import cm
 
 
 def refactor_row(headers, row):
@@ -72,6 +74,24 @@ def plot_and_save_columns(data, lockname):
         plt.show()
 
 
+def plot_and_save_comparisons_of_methods(method_datas, method_names):
+    columns = method_datas[0].keys()
+    for column in columns:
+        plt.figure()
+        colours = cm.rainbow(np.linspace(0, 1, len(method_names)))
+        for data, colour, method_name in zip(method_datas, colours, method_names):
+            axis = data[column]
+            plt.scatter(axis[0], axis[1], color=colour, label=method_name, alpha=0.4)
+            plt.legend()
+
+        column = refactor_column_name(column)
+        plt.title("{} against increasing number of threads".format(column))
+        plt.xlabel("Number of Threads")
+        plt.ylabel(column)
+        plt.savefig("graphs/merged/{}.png".format(column.replace(" ", "_")))
+        plt.show()
+
+
 # X Axis - nThreads
 # Y Axis - Each column
 
@@ -87,8 +107,8 @@ lockfree_data = get_axis_vals_for_all_columns(lockfree_data)
 locking_data = get_axis_vals_for_all_columns(locking_data)
 backoff_data = get_axis_vals_for_all_columns(backoff_data)
 
-plot_and_save_columns(lockfree_data, "lockfree")
-plot_and_save_columns(locking_data, "locking")
-plot_and_save_columns(backoff_data, "backoff")
+# plot_and_save_columns(lockfree_data, "lockfree")
+# plot_and_save_columns(locking_data, "locking")
+# plot_and_save_columns(backoff_data, "backoff")
 
-# TODO merge plots for each column
+plot_and_save_comparisons_of_methods([lockfree_data, locking_data, backoff_data], ["lockfree", "locking", "backoff"])
