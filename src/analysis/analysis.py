@@ -1,5 +1,6 @@
 import csv
 import matplotlib.pyplot as plt
+import numpy as np
 
 
 def readDataIntoDict(file):
@@ -7,7 +8,7 @@ def readDataIntoDict(file):
     with open(file, newline='') as f:
         headers = csv.reader(f).__next__()
         n_headers = len(headers)
-        reader = csv.DictReader(f, fieldnames=headers[:n_headers - 1])
+        reader = csv.DictReader(f, fieldnames=headers[:n_headers - 1], quoting=csv.QUOTE_NONNUMERIC)
 
         n_threads = 1
         while n_threads < 24:
@@ -21,7 +22,11 @@ def readDataIntoDict(file):
             # Increment number of threads
             n_threads = n_threads + 1
             # Skip repeated header row
-            reader.__next__()
+            try:
+                reader.__next__()
+            except ValueError:
+                # Occurs when parsing header fields
+                pass
 
     return results_dict
 
@@ -44,6 +49,18 @@ def get_axis_vals_for_column(data, column_name):
     return xs, ys
 
 
+def plot_and_save_columns(data, lockname):
+    for column, values in data.items():
+        fig = plt.figure()
+        ax = plt.subplot()
+        plt.scatter(values[0], values[1])
+        plt.title("{} against increasing number of threads".format(column))
+        plt.xlabel("Number of Threads")
+        plt.ylabel(column)
+        plt.show()
+        plt.savefig("graphs/{}/{}.png".format(lockname, column))
+
+
 # X Axis - nThreads
 # Y Axis - Each column
 
@@ -59,7 +76,6 @@ lockfree_data = get_axis_vals_for_all_columns(lockfree_data)
 locking_data = get_axis_vals_for_all_columns(locking_data)
 backoff_data = get_axis_vals_for_all_columns(backoff_data)
 
-for column, values in lockfree_data.items():
-    scatter = plt.scatter(values[0], values[1])
-    scatter.settitle(column)
-    plt.show()
+plot_and_save_columns(lockfree_data, "lockfree")
+plot_and_save_columns(locking_data, "locking")
+plot_and_save_columns(backoff_data, "backoff")
