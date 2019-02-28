@@ -185,7 +185,7 @@ Increasing the number of threads far past the number of threads that can be proc
 \begin{equation}
 \label{eq:nthreads}
 	\textit{nthreads}_\textit{max} =
-	 \textit{threads per core} \times \textit{cores per socket} \times \textit{nSockets}
+	 \textit{threads per core} \times \textit{cores per socket} \times \textit{number of sockets}
 \end{equation}
 
 Since the backoff lock could only use nanoseconds as the smallest unit, it was not possible to use values for maximum and initial delay that would be able to compete with the other lock implementations.
@@ -198,7 +198,11 @@ This was achieved by passing an \url{Attempt} struct to each of the \url{CAccoun
 
 The CPU clock time before and after the function call was used to obtain the time taken for the function to execute, and provide a rough value for the wait time.
 
-Before each experiement, memory was allocated for all the \url{Attempt} structs required for each thread, and freed afterwards. The max, min, and average values would be obtained for each thread, and printed to the console. To store the results, stdin was redirected to a csv file for later analysis.
+Before each experiement, memory was allocated for all the \url{Attempt} structs required for each thread, and freed afterwards. The max, min, and average values would be obtained for each thread, and printed to the console. To store the results, stdin was redirected to a csv file.
+
+\subsection{Analysis}
+
+To analyse and create plots of the data, a python script was used. The independant variable in each graph would be the number of threads, and this was plotted against the average, max, and minimum number of retries and wait times.
 
 \subsection{Results}
 
