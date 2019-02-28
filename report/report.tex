@@ -139,6 +139,10 @@ All experiments were run on a machine with the following specs:
  \hline
  Thread(s) per Core & 2 \\
  \hline
+ Socket(s) & 1 \\
+ \hline 
+ Core(s) per socket & 6 \\
+ \hline
  OS       & Ubuntu 18.04 \\
  \hline
 \end{tabu}
@@ -176,9 +180,18 @@ To test performance, two aspects were considered:
 
 \noindent These metrics were compared as the number of competeting threads were increased.
 
+Increasing the number of threads far past the number of threads that can be processed simultaneously would increase the effect of the scheduler on the results. Therefore equation \ref{eq:nthreads} was used to calculate the maximum number of simulateonously processable threads. For the architecture described earlier, $\textit{nthreads}_\textit{max} = 12 $. Up to 24 threads were used in the experiment out of curiosity, though the calculated value would be considered during analysis.
+
+
+\begin{equation}
+\label{eq:nthreads}
+	\textit{nthreads}_\textit{max} =
+	 \textit{threads per core} \times \textit{cores per socket} \times \textit{nSockets}
+\end{equation}
+
 \subsection{Setup}
 
-In order to capture the data needed, the functions would have to be slightly changed to capture the behaviour needed, and the process of recording data would have to be as unintrusive as possible.
+In order to capture the data needed, the functions would have to be slightly changed to capture the behaviour needed, and the process of recording data would have to be as unintrusive as possible. 
 
 
 
