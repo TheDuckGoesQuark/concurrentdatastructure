@@ -206,9 +206,46 @@ To analyse and create plots of the data, a python script was used. The independa
 
 A scatter plot was created of each dependant variable against the independant variable. Plots merging the results from the different locking mechanisms were also created. In order to improve the visualisations, the wait times were converted from seconds to nano seconds, as the former appeared as a flat line when plotted. 
 
-Once plotted, it was realised that the minimum wait time and number of tries was constant for all threads, and so this was omitted from the results. Due to reasons discussed earlier, a second of set of comparison plots were made that did not include the backoff lock results. 
+Once plotted, it was realised that the minimum wait time and number of tries was constant for all threads, and so this was omitted from the results.
 
 \subsection{Results}
+
+In each plot, each point corresponds to the measurement made by an individual thread when using a specific locking mechanism, i.e. when using two threads, there will be two data points for each locking mechanism at $x = 2$.
+
+Figure \ref{fig:mergedavgwait} shows that there is a large performance difference between each mechanism. The backoff implementation had the largest variance as the number of threads increased, and the lockfree implementation had the best performance overall. Locking showed a linear growth in wait time, whilst lockfree showed logarithmic growth.
+
+\begin{figure}[!h]
+\centering
+  \centering
+	\includegraphics[width=0.8\linewidth]{images/mergedAverageWait}
+	\caption{Average wait time of all locking mechanisms}
+	\label{fig:mergedavgwait}
+\end{figure}
+
+Since the larger unit of delay used in the backoff implementation affected the scale of the plot in Figure \ref{fig:mergedavgwait}, Figure \ref{fig:omittedavgwait} was also made. By only considering up to $x = 12$, we can see that the lockfree mechanism produces the lowest wait time once more than 4 threads are involved. The effect of the scheduler can also be seen once $x > 12$, as the variance of the average wait times for both locking mechanisms increases. 
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.8\linewidth]{images/omittedAverageWait}
+	\caption{Average wait time of locking and lockfree locking mechanisms}
+  \label{fig:omittedavgwait}
+\end{figure}
+
+Whilst the lockfree mechanism appears to reduce the time spent waiting to access a resource, the mutex has the advantage of allowing a thread to sleep, and allowing other threads to continue execution whilst it does so. Since the lockfree implenentation requires constant polling of the resource, it is likely to be less energy effecient, and more demanding on the CPU. Though the backoff implementation was expected to reduce these negatives, it would suffer the trade-off of likely increasing average wait times.
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.8\linewidth]{images/mergedavgtries}
+	\caption{Average number of tries of all locking mechanisms}
+  \label{fig:mergeavgtries}
+\end{figure}
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.8\linewidth]{images/omittedavgtries}
+	\caption{Average wait time of locking and lockfree locking mechanisms}
+  \label{fig:omittedavgtries}
+\end{figure}
 
 \part*{Conclusion}
 
