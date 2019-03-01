@@ -29,4 +29,10 @@ Intel.
   \url{https://software.intel.com/en-us/download/intel-64-and-ia-32-architectures-sdm-combined-volumes-1-2a-2b-2c-2d-3a-3b-3c-3d-and-4}.
 \newblock Accessed: 2019-02-22.
 
+\bibitem{cfc}
+Canonical Ltd.
+\newblock sched - overview of cpu scheduling.
+\newblock \url{http://manpages.ubuntu.com/manpages/cosmic/man7/sched.7.html}.
+\newblock Accessed: 2019-03-01.
+
 \end{thebibliography}
