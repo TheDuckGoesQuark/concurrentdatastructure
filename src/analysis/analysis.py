@@ -74,7 +74,7 @@ def plot_and_save_columns(data, lockname):
         plt.show()
 
 
-def plot_and_save_comparisons_of_methods(method_datas, method_names):
+def plot_and_save_comparisons_of_methods(method_datas, method_names, dir_name):
     columns = method_datas[0].keys()
     for column in columns:
         plt.figure()
@@ -88,7 +88,7 @@ def plot_and_save_comparisons_of_methods(method_datas, method_names):
         plt.title("{} against increasing number of threads".format(column))
         plt.xlabel("Number of Threads")
         plt.ylabel(column)
-        plt.savefig("graphs/merged/{}.png".format(column.replace(" ", "_")))
+        plt.savefig("graphs/{}/{}.png".format(dir_name, column.replace(" ", "_")))
         plt.show()
 
 
@@ -107,8 +107,13 @@ lockfree_data = get_axis_vals_for_all_columns(lockfree_data)
 locking_data = get_axis_vals_for_all_columns(locking_data)
 backoff_data = get_axis_vals_for_all_columns(backoff_data)
 
-# plot_and_save_columns(lockfree_data, "lockfree")
-# plot_and_save_columns(locking_data, "locking")
-# plot_and_save_columns(backoff_data, "backoff")
+plot_and_save_columns(lockfree_data, "lockfree")
+plot_and_save_columns(locking_data, "locking")
+plot_and_save_columns(backoff_data, "backoff")
 
-plot_and_save_comparisons_of_methods([lockfree_data, locking_data, backoff_data], ["lockfree", "locking", "backoff"])
+plot_and_save_comparisons_of_methods([lockfree_data, locking_data, backoff_data],
+                                     ["lockfree", "locking", "backoff"],
+                                     "merged")
+plot_and_save_comparisons_of_methods([lockfree_data, locking_data],
+                                     ["lockfree", "locking"],
+                                     "omitted")

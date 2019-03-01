@@ -206,6 +206,8 @@ To analyse and create plots of the data, a python script was used. The independa
 
 A scatter plot was created of each dependant variable against the independant variable. Plots merging the results from the different locking mechanisms were also created. In order to improve the visualisations, the wait times were converted from seconds to nano seconds, as the former appeared as a flat line when plotted. 
 
+Once plotted, it was realised that the minimum wait time and number of tries was constant for all threads, and so this was omitted from the results. Due to reasons discussed earlier, a second of set of comparison plots were made that did not include the backoff lock results. 
+
 \subsection{Results}
 
 \part*{Conclusion}
